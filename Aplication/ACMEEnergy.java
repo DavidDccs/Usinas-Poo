@@ -53,6 +53,7 @@ public class ACMEEnergy {
 
     public static void pesquisarUnisa(){
         System.out.println("Insira aqui o nome da Usina que deseja procurar");
+        in.nextLine();
         String nome = in.nextLine();
         Usina usina = conglomerado.pesquisaUsina(nome);
         if(usina!=null){System.out.println("Usina encontrada!\n" + "Nome da Usina: "+usina.getNome() +" Producao MWh: " +usina.getProducaoMWh() + " Custo MWh: " + usina.getCustoMWh() + " Tipo de energias: " + usina.getEnergias().getNome());}
@@ -135,14 +136,16 @@ public class ACMEEnergy {
 
     public static void consultarMWh(){
         System.out.println("Insira aqui o nome da Usina que deseja procurar");
+        in.nextLine();
         String nome = in.nextLine();
         Usina usina = conglomerado.pesquisaUsina(nome);
-        if(usina!=null){System.out.println("Usina encontrada! O preçco de seu Mwh é de: " +usina.calculaMWh());}
+        if(usina!=null){System.out.println("Usina encontrada! O preco de seu Mwh eh de: " +usina.calculaMWh());}
         else{System.out.println("Nenhuma usina encontrada com este nome");}
     }
 
     public static void salvarUsinas(){
         System.out.println("Insira aqui o nome do arquivo que deseja salvar");
+        in.nextLine();
         String nomeArquivo = in.nextLine();
         conglomerado.salvaDadosArquivo(nomeArquivo);
 
@@ -150,6 +153,7 @@ public class ACMEEnergy {
 
     public static void carregarUsinas(){
         System.out.println("Insira Aqui o path do arquivo que deseja ler");
+        in.nextLine();
         String path2 = in.nextLine();
         Path path = Paths.get(path2);
         try(BufferedReader br = new BufferedReader(new FileReader(path2))){
