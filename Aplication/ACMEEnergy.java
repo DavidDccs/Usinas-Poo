@@ -122,9 +122,9 @@ public class ACMEEnergy {
        if(naorenovavel){ while(durabilidade<0){
             try{System.out.println("Insira aqui a durabilidade da Usina em anos");
                 durabilidade= in.nextDouble();} catch(InputMismatchException e){ System.out.println("Por favor, Insira um numero valido");}}
-        if(naorenovavel== true){UsinaNaoRenovavel nova = new UsinaNaoRenovavel(nome,producao,preco,energia,durabilidade);if(conglomerado.cadastraUsina(nova)){System.out.println("Usina Cadastrada com sucesso");}else{System.out.println("Usina repetida");}}
-        else if(renovavel== true){UsinaRenovavel nova = new UsinaRenovavel(nome,producao,preco,energia);if(conglomerado.cadastraUsina(nova)){System.out.println("Usina Cadastrada com sucesso");}else{System.out.println("Usina repetida");}}
-    }}
+        if(naorenovavel){UsinaNaoRenovavel nova = new UsinaNaoRenovavel(nome,producao,preco,energia,durabilidade);if(conglomerado.cadastraUsina(nova)){System.out.println("Usina Cadastrada com sucesso");}else{System.out.println("Usina repetida");}}
+        }
+        if(renovavel){UsinaRenovavel nova = new UsinaRenovavel(nome,producao,preco,energia);;if(conglomerado.cadastraUsina(nova)){System.out.println("Usina Cadastrada com sucesso");}else{System.out.println("Usina repetida");}}}
     public static int menu() {
         System.out.println("\nO que deseja fazer?");
         System.out.println("1-Cadastrar uma nova usina  \n2-Pesquisar uma usina  \n3-Listar todas as usinas  \n4-Consultar o preco do MWh  \n5-Salvar Usinas em um arquivo \n6-Carregar Usinas de um arquivo \n0-Sair do programa");
